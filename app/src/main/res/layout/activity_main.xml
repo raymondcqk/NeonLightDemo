@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--父布局-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#006699"
+    android:id="@+id/root"
+    tools:context="com.example.keihongchan.neonlight.MainActivity">
+
+    <!--文字控件：标题-->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#006699"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="24sp"
+        android:text="瞎眼灯"
+        android:textColor="#ffffff" />
+
+    <!--文字控件：定义一个无内容的方形文字控件，可充当颜色块-->
+    <TextView
+        android:id="@+id/view_0"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/view_1"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/view_2"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/view_3"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/view_4"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/view_5"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center" />
+
+    <com.example.keihongchan.neonlight.DragView
+        android:layout_gravity="center"
+        android:src="@drawable/logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp" />
+
+    <!--在父布局中嵌入一个子布局，用于收纳两个按钮控件-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <!--按钮控件-->
+        <Button
+            android:id="@+id/btn_click"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:text="点击变色" />
+
+        <!--按钮控件-->
+        <Button
+            android:id="@+id/btn_auto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:text="自动变色" />
+    </LinearLayout>
+</FrameLayout>
