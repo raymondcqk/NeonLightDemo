@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 程序入口
+     *
      * @param savedInstanceState 暂时不需理解
      */
     @Override
@@ -133,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 霓虹灯程序
-     *
+     * <p>
      * 该函数每执行一次，步进变色一次
      */
     private void neon() {
@@ -163,4 +164,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    /**
+     * 退出App时会执行的函数
+     */
+    @Override
+    protected void onStop() {
+        //退出App时停止线程
+        if (thread != null && thread.isAlive()) {
+            thread.interrupt();
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        super.onStop();
+    }
 }
